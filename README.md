@@ -25,7 +25,7 @@
 
 # 📖 [Backend recipe app] <a name="about-project"></a>
 
-**[Backend recipe app]** is the backend of a recipe app. It is a Ruby on Rails API that allows users to create, edit, delete, and view recipes. It also allows users to create, edit, delete, and view ingredients and instructions for each recipe.
+**[Backend recipe app]** is a versatile Ruby on Rails API that underpins a feature-rich recipe app. Users can easily discover and engage with high-quality recipes by exploring the app's intuitive ranking system. Additionally, users can show their appreciation for a recipe by liking it, as well as leave insightful comments to share their thoughts and feedback. With the powerful combination of recipe ranking, liking, and commenting features, **[Backend recipe app]** offers a dynamic platform for food enthusiasts to connect and share their passion for great cuisine.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -81,6 +81,8 @@
 
 - Authentication with JWT
 - Create, edit, delete, and view recipes
+- Create, edit, delete, and view comments
+- Rate and like recipes
 - Create, edit, delete, and view ingredients and instructions for each recipe
 - Search for recipes by name
 - Filter recipes by category
@@ -90,8 +92,6 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
 
 - [Live Demo Link will be available soon](https://yourdeployedapplicationlink.com)
 

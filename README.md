@@ -1,40 +1,3 @@
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
-<!-- <div align="center">
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Recipe README Template</b></h3>
-
-</div> -->
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -47,9 +10,9 @@ After you're finished please remove all the comments and instructions!
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
+    - [Setup Database](#setup-database)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -62,27 +25,28 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Backend recipe app] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[Backend recipe app]** is a...
+**[Backend recipe app]** is the backend of a recipe app. It is a Ruby on Rails API that allows users to create, edit, delete, and view recipes. It also allows users to create, edit, delete, and view ingredients and instructions for each recipe.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+    <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+    <li><a href="https://sass-lang.com/">Sass</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">rubyonrails.org</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -93,15 +57,33 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
+<details>
+<summary>Testing</summary>
+  <ul>
+    <li><a href="https://jestjs.io/">Jest</a></li>
+    <li><a href="https://rspec.info/">RSpec</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Deployment</summary>
+  <ul>
+    <li><a href="https://render.com/">Render</a></li>
+    <li><a href="https://fly.io/">Fly.io</a></li>
+    <li><a href="https://www.netlify.com/">Netlify</a></li>
+    <li><a href="https://vercel.com/">Vercel</a></li>
+  </ul>
+</details>
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- Authentication with JWT
+- Create, edit, delete, and view recipes
+- Create, edit, delete, and view ingredients and instructions for each recipe
+- Search for recipes by name
+- Filter recipes by category
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,7 +93,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link will be available soon](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,83 +101,62 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+- Node.js
+- Git
+- A text editor (VSCode, Sublime, Atom, etc.)
+- A browser (Chrome, Firefox, Safari, etc.)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/Simi-Hammas/recipe-backend.git
+  cd recipe-backend
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
+```sh
+  bundle install
+```
+
+### Setup Database
+
+Setup the database with:
 
 ```sh
-  cd my-project
-  gem install
+  rails db:create
+  rails db:migrate
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
   rails server
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
 ```sh
-  bin/rails test test/models/article_test.rb
+  rspec
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,19 +164,17 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
-👤 **Author1**: **Selma Belhadj**
+👤 **Selma Belhadj**
 
 - GitHub: [@selma-belhadj](https://github.com/selma-belhadj)
 - Twitter: [@selma_bel_hadj](https://twitter.com/selma_bel_hadj)
 - LinkedIn: [@selma-belhadj](https://www.linkedin.com/in/selma-belhadj/)
 
-👤 **Author2**: **Hammas Bin Salem**
+👤 **Hammas Bin Saleem**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Hammas-Saleem](https://github.com/Hammas-Saleem)
+- Twitter: [@HammasSaleem4](https://twitter.com/HammasSaleem4)
+- LinkedIn: [hammas-saleem](https://www.linkedin.com/in/hammas-saleem/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -223,11 +182,12 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] Filter recipes by difficulty
+- [ ] Filter recipes by cooking time
+- [ ] Filter recipes by number of servings
+- [ ] Filter recipes by ingredients
+- [ ] Filter recipes by instructions
+- [ ] Filter recipes by calories
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,9 +205,7 @@ Feel free to check the [issues page](https://github.com/Simi-Hammas/recipe-backe
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project, please give it a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -255,17 +213,13 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank the following people for their support and guidance:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
 
 - **[Question_1]**
 
@@ -282,7 +236,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

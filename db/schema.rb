@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_28_173209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.boolean "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -27,18 +31,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_ingredients_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.boolean "liked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["recipe_id"], name: "index_likes_on_recipe_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "rankings", force: :cascade do |t|
     t.integer "stars"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["recipe_id"], name: "index_rankings_on_recipe_id"
+    t.index ["user_id"], name: "index_rankings_on_user_id"
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
@@ -47,6 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.boolean "optional"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -64,6 +82,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.boolean "deleted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "saved_recipes", force: :cascade do |t|
@@ -71,6 +91,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["recipe_id"], name: "index_saved_recipes_on_recipe_id"
+    t.index ["user_id"], name: "index_saved_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,4 +107,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_165906) do
     t.string "country"
   end
 
+  add_foreign_key "comments", "recipes"
+  add_foreign_key "comments", "users"
+  add_foreign_key "ingredients", "users"
+  add_foreign_key "likes", "recipes"
+  add_foreign_key "likes", "users"
+  add_foreign_key "rankings", "recipes"
+  add_foreign_key "rankings", "users"
+  add_foreign_key "recipe_ingredients", "ingredients"
+  add_foreign_key "recipe_ingredients", "recipes"
+  add_foreign_key "recipes", "users"
+  add_foreign_key "saved_recipes", "recipes"
+  add_foreign_key "saved_recipes", "users"
 end

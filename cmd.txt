@@ -41,3 +41,18 @@ rails g migration AddOtherColumnsToUsers email:string public_name:string
 rails g migration change_preparation_time_to_be_integer_in_recipes
 rails g migration change_cooking_time_to_be_integer_in_recipes
 
+================= cmds to generate models ===============
+
+rails g model Recipe --skip-migration
+
+rails g model Like --skip-migration
+
+rails g model Comment --skip-migration
+
+rails g model Ingredient --skip-migration
+
+rails g model Ranking --skip-migration
+
+rails g model SavedRecipe --skip-migration
+
+rails g model RecipeIngredient --skip-migration

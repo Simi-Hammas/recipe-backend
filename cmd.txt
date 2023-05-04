@@ -41,5 +41,3 @@ rails g migration AddOtherColumnsToUsers email:string public_name:string
 rails g migration change_preparation_time_to_be_integer_in_recipes
 rails g migration change_cooking_time_to_be_integer_in_recipes
 
-
-

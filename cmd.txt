@@ -34,6 +34,7 @@ rails g migration AddRecipeRefToSavedRecipes recipe:references
 rails g migration AddRecipeRefToRecipeIngredients recipe:references
 
 rails g migration RenameColumnTypeInRecipes
+rails g migration RenameColumnDeletedInRecipes
 
 
 rails g migration AddIngredientRefToRecipeIngredients ingredient:references

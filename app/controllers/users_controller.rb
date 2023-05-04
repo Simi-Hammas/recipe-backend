@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     }, status: :created
   end
 
-  def me 
+  def me
     render json: current_user, status: :ok
   end
 

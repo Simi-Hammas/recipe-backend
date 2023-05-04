@@ -51,4 +51,3 @@ group :development do
 end
 
 gem 'rswag'
-

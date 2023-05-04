@@ -17,5 +17,5 @@ class Recipe < ApplicationRecord
   validates :recipe_type, presence: true
   validates :country, presence: true, format: { with: /[a-zA-Z]/ }, length: { minimum: 4, maximum: 50 }
   validates :accessible, presence: true
-  validates :deleted, presence: true
+  validates :deleted_recipe, presence: true
 end

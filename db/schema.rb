@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_04_130822) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_143929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_130822) do
     t.json "recipe_type"
     t.string "country"
     t.boolean "accessible"
-    t.boolean "deleted"
+    t.boolean "deleted_recipe"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

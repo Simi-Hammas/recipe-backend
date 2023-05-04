@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: recipe_backend_production
-  username: recipe_backend
-  password: <%= ENV["RECIPE_BACKEND_DATABASE_PASSWORD"] %>
+  # username: recipe_backend
+  # password: <%= ENV["RECIPE_BACKEND_DATABASE_PASSWORD"] %>

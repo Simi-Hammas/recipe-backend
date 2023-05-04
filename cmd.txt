@@ -1,0 +1,43 @@
+================= cmds to generate tables ===============
+
+
+rails g migration CreateRecipes title:string description:text method:text preparation_time:string cooking_time:string ease_of_preparation:string notes:text photo:string type:json country:string accessible:boolean deleted:boolean
+
+rails g migration CreateIngredients name:string photo:string description:text
+
+rails g migration CreateRecipeIngredients quantity:string unit:string optional:boolean 
+
+rails g migration CreateComments comment_text:text deleted:boolean 
+
+rails g migration CreateLikes liked:boolean
+
+rails g migration CreateSavedRecipes saved:boolean notes:text
+
+rails g migration CreateRanking stars:integer
+
+rails g migration AddColumnsToUsers photo:string country:string 
+
+================= cmds to generate associations between tables & to update tables ===============
+
+rails g migration AddUserRefToRecipes user:references
+rails g migration AddUsersRefToComments user:references
+rails g migration AddUsersRefToLikes user:references
+rails g migration AddUsersRefToRankings user:references
+rails g migration AddUsersRefToIngredients user:references
+rails g migration AddUsersRefToSavedRecipes user:references
+
+
+rails g migration AddRecipeRefToComments recipe:references
+rails g migration AddRecipeRefToLikes recipe:references
+rails g migration AddRecipeRefToRankings recipe:references
+rails g migration AddRecipeRefToSavedRecipes recipe:references
+rails g migration AddRecipeRefToRecipeIngredients recipe:references
+
+
+rails g migration AddIngredientRefToRecipeIngredients ingredient:references
+
+rails g migration AddOtherColumnsToUsers email:string public_name:string
+
+rails g migration change_preparation_time_to_be_integer_in_recipes
+rails g migration change_cooking_time_to_be_integer_in_recipes
+

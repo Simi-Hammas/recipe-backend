@@ -44,6 +44,14 @@ rails g migration AddOtherColumnsToUsers email:string public_name:string
 rails g migration change_preparation_time_to_be_integer_in_recipes
 rails g migration change_cooking_time_to_be_integer_in_recipes
 
+rails g migration AddRecipesCounterToUsers recipes_counter:integer
+rails g migration AddSavedRecipesCounterToUsers saved_recipes_counter:integer
+
+
+rails g migration AddCommentsCounterToRecipes comments_counter:integer
+rails g migration AddLikesCounterToRecipes likes_counter:integer
+
+
 ================= cmds to generate models ===============
 
 rails g model Recipe --skip-migration
@@ -71,3 +79,5 @@ Recipe.create(title: 'Chicken Biryani', description: 'Made of Chicken and Rice',
 Ingredient.create(name: 'Chicken', photo: 'https://www.allrecipes.com/thmb/qhJDqRRX1CkzlBJ9YDB7BME-vsg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Raw-Chicken-Mistakes-3x2-1-8a51428f2d5d46f3bc4dce8a5d1f32d3.png', description: 'Halal Chicken', user_id: 1);
 
 RecipeIngredient.create(quantity: '1', unit: 'kg', optional: false, recipe_id: 1, ingredient_id: 1);
+
+User.create(username:'hammas1', bio:'Pakistani Chef', email:'hammas@gmail.com', photo:'', country:'Pakistan', public_name:'Pakistani Chef', password:'12345678')

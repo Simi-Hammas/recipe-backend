@@ -47,7 +47,7 @@ rails g migration change_cooking_time_to_be_integer_in_recipes
 rails g migration AddRecipesCounterToUsers recipes_counter:integer
 rails g migration AddSavedRecipesCounterToUsers saved_recipes_counter:integer
 
-
+rails g migration AddRecipesCounterToUsers recipes_counter:integer
 rails g migration AddCommentsCounterToRecipes comments_counter:integer
 rails g migration AddLikesCounterToRecipes likes_counter:integer
 

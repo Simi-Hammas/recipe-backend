@@ -14,7 +14,7 @@ RSpec.describe SavedRecipe, type: :model do
     expect(@saved_recipe).to be_valid
   end
 
-  it 'the savedrecipe should contain true/false for saved boolean attribute' do
+  it 'the saved recipe should contain true/false for saved boolean attribute' do
     @saved_recipe.saved = true
     expect(@saved_recipe).to be_valid
     @saved_recipe.saved = false

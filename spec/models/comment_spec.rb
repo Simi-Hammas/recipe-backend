@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   before(:each) do
-    @user = User.new(username: 'selma', bio: 'Algerian Chef', email: 'selma@gmail.com', password: 'selma1234', photo: '',
+    @user = User.new(username: 'selma', bio: 'Algerian Chef', email: 'selma@gmail.com', password: 'selma123', photo: '',
                      country: 'Algeria', public_name: 'Algerian Chef')
     @recipe = Recipe.new(title: 'Chicken Biryani', description: 'Made of Chicken and Rice', preparation_time: '60',
                          cooking_time: '60', ease_of_preparation: 'Medium', notes: 'NA', photo: 'https://healux.in/wp-content/uploads/2020/11/ChickenBiryani.jpg',

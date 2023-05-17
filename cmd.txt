@@ -51,6 +51,10 @@ rails g migration AddRecipesCounterToUsers recipes_counter:integer
 rails g migration AddCommentsCounterToRecipes comments_counter:integer
 rails g migration AddLikesCounterToRecipes likes_counter:integer
 
+rails g migration AddRecipesCounterToUsers recipes_counter:integer
+rails g migration AddSavedRecipesCounterToUsers saved_recipes_counter:integer
+
+
 
 ================= cmds to generate models ===============
 

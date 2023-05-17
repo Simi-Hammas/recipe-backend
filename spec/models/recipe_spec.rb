@@ -2,8 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   before(:each) do
-    @user = User.new(username: 'akram', bio: 'Algerian Chef', email: 'akram@gmail.com', password: 'akram123',
-                     photo: '', country: 'Algeria', public_name: 'Algerian Chef')
+    @user = User.new(username: 'selma',
+                     bio: 'Algerian Chef',
+                     email: 'selma@gmail.com',
+                     password: 'selma123',
+                     photo: '',
+                     country: 'Algeria',
+                     public_name: 'Algerian Chef',
+                     recipes_counter: 0,
+                     saved_recipes_counter: 0)
+
     @recipe = Recipe.new(
       title: 'Chicken Biryani',
       description: 'Made of Chicken and Rice',
@@ -190,8 +198,8 @@ RSpec.describe Recipe, type: :model do
       expect(@recipe).to_not be_valid
     end
 
-    it 'recipe\'s country should be of length less than or equal than 50' do
-      @recipe.country = 'a' * 51
+    it 'recipe\'s country should be of length less than or equal than 60' do
+      @recipe.country = 'a' * 61
       expect(@recipe).to_not be_valid
     end
 

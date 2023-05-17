@@ -2,8 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Ingredient, type: :model do
   before(:each) do
-    @user = User.new(username: 'selma', bio: 'Algerian Chef', email: 'selma@gmail.com', password: 'selma1234',
-                     photo: '', country: 'Algeria', public_name: 'Algerian Chef')
+    @user = User.new(username: 'selma',
+                     bio: 'Algerian Chef',
+                     email: 'selma@gmail.com',
+                     password: 'selma123',
+                     photo: '',
+                     country: 'Algeria',
+                     public_name: 'Algerian Chef',
+                     recipes_counter: 0,
+                     saved_recipes_counter: 0)
+
     @ingredient = Ingredient.new(name: 'salt', photo: '', description: 'normal mineral salt', user: @user)
   end
 

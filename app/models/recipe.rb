@@ -20,7 +20,7 @@ class Recipe < ApplicationRecord
   validates :photo, presence: true
   validates :recipe_type, presence: true
   validates :country, presence: true, format: { with: /\A[A-Za-z]+(?: [A-Za-z]+)?\z/ },
-                      length: { minimum: 3, maximum: 50 }
+                      length: { minimum: 3, maximum: 60 }
   validates :accessible, inclusion: [true, false]
   validates :deleted_recipe, inclusion: [true, false]
   validates :likes_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

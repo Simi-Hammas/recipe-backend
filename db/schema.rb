@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_08_162552) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_17_170509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -110,6 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_162552) do
     t.string "email"
     t.string "public_name"
     t.integer "recipes_counter"
+    t.integer "saved_recipes_counter", default: 0
   end
 
   add_foreign_key "comments", "recipes"

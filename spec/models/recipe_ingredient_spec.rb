@@ -4,9 +4,23 @@ RSpec.describe RecipeIngredient, type: :model do
   before(:each) do
     @user = User.new(username: 'selma', bio: 'Algerian Chef', email: 'selma@gmail.com', password: 'selma1234',
                      photo: '', country: 'Algeria', public_name: 'Algerian Chef')
-    @recipe = Recipe.new(title: 'Chicken Biryani', description: 'Made of Chicken and Rice', preparation_time: '60',
-                         cooking_time: '60', ease_of_preparation: 'Medium', notes: 'NA', photo: 'https://healux.in/wp-content/uploads/2020/11/ChickenBiryani.jpg',
-                         recipe_type: {}, country: 'Pakistan', accessible: true, deleted_recipe: false, user: @user)
+    @recipe = Recipe.new(
+      title: 'Chicken Biryani',
+      description: 'Made of Chicken and Rice',
+      preparation_time: '60',
+      cooking_time: '60',
+      ease_of_preparation: 'Medium',
+      notes: 'NA',
+      method: 'Coming Soon  Inshallah',
+      photo: 'https://healux.in/wp-content/uploads/2020/11/ChickenBiryani.jpg',
+      recipe_type: ['Non-Veg'],
+      country: 'Pakistan',
+      accessible: true,
+      deleted_recipe: false,
+      user: @user,
+      comments_counter: 0,
+      likes_counter: 0
+    )
     @ingredient = Ingredient.new(name: 'salt', photo: '', description: 'normal mineral salt', user: @user)
     @recipe_ingredient = RecipeIngredient.new(quantity: '2/3', unit: 'tablespoons', optional: true, recipe: @recipe,
                                               ingredient: @ingredient)
@@ -87,7 +101,6 @@ RSpec.describe RecipeIngredient, type: :model do
     end
   end
   describe 'Testing the recipe_ingredient model validations: Optional' do
-
     it 'recipe_ingredient should contain true/false for optional boolean' do
       @recipe_ingredient.optional = true
       expect(@recipe_ingredient).to be_valid
